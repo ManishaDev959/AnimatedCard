@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)file:///C:/Users/HP/OneDrive/Desktop/Css%20Challenge/day5.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated card</title>
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            color:#786450;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(236,187,106);
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 60%; */
+            width:40%;
+            aspect-ratio: 1/1;
+            
+            background-color: white;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 10px 10px 24px rgba(0,0,0,0.40);
+           
+        }
+        /* .container::before{
+            content:'';
+         border:2px solid #3f2c1a;
+         width:98%;
+         height: 98%;
+         position: absolute;
+         border-radius: 20px;
+         background-color: #786450; */
+         
+        
+        
+        .leftside{
+            height: 90%;
+            width:50%;
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 30px;
+            border:.5px solid white;
+            margin-right:10px;
+            box-shadow: 10px 10px 24px 10px rgba(0,0,0,0.30);
+            transition: 500ms ease-in-out;
+        }
+        .leftside:hover{
+            border: 1px solid white;
+        }
+      
+        .photo{
+            height: 130px;
+            width:130px;
+            background-image: url("feather.jpg");
+            background-size: cover;
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .photo::before{
+            content: '';
+            height:140px;
+            width:140px;
+            border:1px solid;
+            border-radius: 50%;
+            border-color: #786450 #786450 #786450 transparent;
+            position: absolute;
+            transition: all 1.5s ease-in-out;
+            top:-6px;
+            left:-6px;
+           
+        }
+        .photo:hover::before{
+            transform: rotateZ(360deg);
+        }
+
+        .photo:after{
+            content: '';
+            height:150px;
+            width:150px;
+            border:1px solid;
+            border-radius: 50%;
+            border-color:  #786450 transparent #786450 #786450;
+            position: absolute;
+            transition: all 1.5s ease-in-out;
+            top:-11.5px;
+            left:-11.5px;
+          
+
+        }
+        .photo:hover::after{
+            transform: rotateZ(-360deg);
+        }
+        .name{
+            text-align: flex;
+            margin-bottom: 10%;
+            font-size: 1.3rem;  
+            margin:25px 0 40px 0;
+            /* border:2px solid black */
+        }
+        .links{
+            display: flex;
+            flex-direction: column;
+            height: 30%;
+            width:55%;
+            /* border: 1px solid blue; */
+            align-items: center;
+            justify-content: center;
+            gap:10%;
+        }
+        .link{
+            border: 2px solid #786450;
+            height: 30%;
+            width:100%;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .link:hover{
+            background-color: #786450;
+            color: white;
+            transition: 500ms ease-in-out;
+            cursor: pointer;
+        }
+        .rightside{
+            height: 95%;
+            width:40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .info{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* border:0.2px solid #3f2c1a; */
+            width:100%;
+            height: 39%;
+            margin: 8px 0;
+            border-radius: 30px;
+            background-color: #f5e8df;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 10px 10px 24px  rgba(0,0,0,0.30);
+            transition: 500ms ease-in-out;
+            border:1px solid white;
+        }
+        .upperspan{
+            font-size: 2rem;
+            /* border:2px solid black; */
+            margin-bottom: -20px;
+        }
+        .info:hover{
+            background-color: #d6c6bb;
+            color: white;
+            
+        }
+       
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="leftside">
+            <div class="photo"></div>
+            <div class="name">
+                <h3>Name</h3>
+                <p>Designation</p>
+            </div>
+            <div class="links">
+                <div class="link">
+                    Follow
+                </div>
+                <div class="link">
+                    Message
+                </div>
+
+            </div>
+        </div>
+
+        <div class="rightside">
+           <div class="info">
+            <span class="upperspan">523</span><br>
+            <span>Posts</span>
+           </div>
+           <div class="info">
+            <span class="upperspan">1387</span><br>
+            <span>Likes</span>
+           </div>
+
+           <div class="info">
+            <span class="upperspan">27K</span><br>
+            <span>Followers</span>
+           </div>
+
+
+
+        </div>
+    </div>
+    
+
+</body></html>
